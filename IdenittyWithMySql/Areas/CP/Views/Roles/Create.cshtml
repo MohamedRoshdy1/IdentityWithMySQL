@@ -1,0 +1,100 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole  
+  
+@{  
+    ViewData["Title"] = "اضافة";  
+}  
+
+
+<link rel="stylesheet" href="/assets/node_modules/dropify/dist/css/dropify.min.css">
+<!-- Bread crumb and right sidebar toggle -->
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">الصلاحيات</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-end">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb justify-content-end">
+                            <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Home" asp-area="CP">الرئيسية</a></li>
+                <li class="breadcrumb-item">لوحة التحكم</li>
+                <li class="breadcrumb-item active">الصلاحيات</li>
+            </ol>
+            <a type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white" asp-action="Index"><i class="fa fa-home"></i> الرئيسية</a>
+        </div>
+    </div>
+</div>
+<!-- End Bread crumb and right sidebar toggle -->
+
+<div class="card-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">الصلاحيات</h4>
+                    <h6 class="card-subtitle"> كل الصلاحيات توجد هنا </h6>
+                    <form class="mt-4" asp-action="Create" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group">
+                            <label class="control-label">الاسم</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary text-white">حفظ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<script src="/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="/assets/node_modules/dropify/dist/js/dropify.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Basic
+        $('.dropify').dropify();
+
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
+        });
+
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
+
+        drEvent.on('dropify.errors', function(event, element) {
+            console.log('Has Errors');
+        });
+
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e) {
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
+    });
+</script>
+}

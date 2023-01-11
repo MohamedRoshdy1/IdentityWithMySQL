@@ -1,0 +1,15 @@
+https://www.shutterstock.com/image-photo/arab-emirati-man-scrolling-his-smart-1567996057
+https://www.shutterstock.com/image-photo/young-handsome-emirati-business-man-uae-1882821583
+https://www.shutterstock.com/image-photo/handsome-man-dish-dasha-working-his-2091752254
+
+
+
+.navbar-brand img {
+  vertical-align: middle;
+  border-style: none;
+  width: 162px;
+  background: white;
+  padding: 20px;
+  border-radius: 13%;
+  box-shadow: 2px 2px 4px #ccc;
+}

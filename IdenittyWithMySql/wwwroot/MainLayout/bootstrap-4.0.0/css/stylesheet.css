@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Cera CY';
+    src: url('CeraCY-Black.eot');
+    src: url('CeraCY-Black.eot?#iefix') format('embedded-opentype'),
+        url('CeraCY-Black.woff2') format('woff2'),
+        url('CeraCY-Black.woff') format('woff'),
+        url('CeraCY-Black.ttf') format('truetype'),
+        url('CeraCY-Black.svg#CeraCY-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cera CY';
+    src: url('CeraCY-Regular.eot');
+    src: url('CeraCY-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CeraCY-Regular.woff2') format('woff2'),
+        url('CeraCY-Regular.woff') format('woff'),
+        url('CeraCY-Regular.ttf') format('truetype'),
+        url('CeraCY-Regular.svg#CeraCY-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: url('CeraPro-Medium.eot');
+    src: url('CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('CeraPro-Medium.woff2') format('woff2'),
+        url('CeraPro-Medium.woff') format('woff'),
+        url('CeraPro-Medium.ttf') format('truetype'),
+        url('CeraPro-Medium.svg#CeraPro-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
